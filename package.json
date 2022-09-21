@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:./public/css/style.css --style expanded --no-source-map"
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css --style expanded --no-source-map",
+    "sass2": "sass --watch ./sass/menus.scss:./public/css/menus.css --style expanded --no-source-map"
   },
   "dependencies": {
     "sass": "^1.54.8"

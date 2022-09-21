@@ -8,7 +8,6 @@ p{
     font-size : 18px;
     font-weight: 300;
 }
-
 h1{
     font-size : 30px;
 }
@@ -16,20 +15,33 @@ h1{
 h2{
     font-size : 26px;
 }
-
+img{
+    height : 300px;
+    width : 100%;
+    object-fit: cover;
+}
+.ctr-flex{
+    display : flex;
+    width : 100%;
+    justify-content: center;
+}
 header{
     width : 100%;
-    height : 80px;
+    height : 120px;
     display : flex;
     flex-direction : column;
     justify-content: center;
-    box-shadow: 0px 10px 5px 0px rgba(50, 50, 50, 0.75); /* Ne fonctionne pas */
     h1{
         font-family: "Shrikhand";
         text-align : center;
     }
+    i{
+        position : absolute;
+        align-self: center;
+        left : 20px;
+        font-size : 26px;
+    }
 }
-
 button{
     height : 60px;
     width : 60%;
@@ -40,8 +52,6 @@ button{
     background: rgb(147,86,220);
     background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%); 
 }
-
-
 .infos{
     width : 100%;
     height : 450px;
@@ -125,7 +135,7 @@ button{
     }
 }
 
-main{
+.home{
     height : 1500px;
     width : 100%;
     display : flex;
@@ -134,7 +144,7 @@ main{
     h2{
         margin : 40px 0 20px 20px; 
     }
-    .restaurant{
+    &__restaurant{
         height : 300px;
         width : 90%;
         background-color: #FFFFFF;
@@ -142,6 +152,23 @@ main{
         margin : 20px 0; 
         border-radius: 10px;
         box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);  
+        .new{
+            position : relative;
+            background-color: #99E2D0;
+            top : -270px;
+            left : 70%;
+            width : 25%;
+            height : 15%;
+            display : flex;
+            flex-direction : column;
+            justify-content: center;
+            border-radius: 5px;
+            p{
+                text-align : center;
+                font-weight: 500;
+                color:#1f8f75
+            }
+        }
         img{
             width : 100%;
             height : 80%;
@@ -151,6 +178,41 @@ main{
         }
         &__infos{
             height : 20%;
+        }
+        h3{
+            padding-left : 1.8%;
+        }
+        .like{
+            display : flex;
+            width : 95%;
+            justify-content : space-between ;
+            .like-default{
+                position : relative;
+                background-color : white;
+            }
+            &--select::before{
+                color : rgb(147,86,220);
+            }
+            p{
+                width : 50%;
+                padding-left : 2%;
+            }
+            div{
+                width : 10px;
+                height : 10px;
+                cursor: pointer;
+            }
+            .pos{
+                position: relative;
+                left : 24%;
+                z-index : 2;
+            }
+            .pos:hover{
+                z-index : -1;
+            }
+            .pos:focus{
+                z-index : -1;
+            }
         }
     }
 }
@@ -162,10 +224,84 @@ footer{
     }
     div{
         margin-left : 20px;
+        display : flex;
+        i{
+            margin-right : 10px;
+        }
     }
     >p{
         margin-left : 20px;
     }
-    background-color: black;
+    background-color: rgb(50, 50, 50);
     color : #FFFFFF
+}
+
+.restaurant-container{
+    background-color :rgb(245, 245, 245);
+    border-radius : 20px 20px 0 0;
+    position : relative;
+    top : -50px;
+    display : flex;
+    flex-wrap: wrap;
+    justify-content : center;
+    h2{
+        font-weight : 300;
+        font-size : 20px;
+        text-transform:uppercase;
+    }
+    .title-restaurant{
+        display : flex;
+        justify-content: space-between;
+        width : 85%;
+        h1{
+            font-family: 'Shrikhand';
+            font-size : 26px;
+            font-weight : 300;
+            margin-top : 20px;
+            padding-left : 7%;
+        }
+        i{
+            padding-top : 20px;
+            font-size : 26px;
+        }
+    }
+    .title-dishes{
+        width : 95%;
+    }
+    .dish{
+        width : 90%;
+        height : 70px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius : 20px;
+        margin : 10px;
+        box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.1);
+        display : flex;
+        flex-wrap : wrap;
+        justify-content : space-between;
+        justify-items: space-around;
+        h3{
+            width : 90%;
+            padding : 5px;
+            font-weight: 500;
+        }
+        p{
+            width : 85%;
+            padding : 5px;
+            font-size : 1em;
+            font-weight : 300;
+        }
+        h4{
+            width : 10%;
+        }
+        &__validation {
+            display : none;
+        }
+    }
+    button{
+        justify-items : center;
+    }
+}
+a{
+    text-decoration: inherit;
+    color : inherit;
 }

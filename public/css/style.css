@@ -18,17 +18,34 @@ h2 {
   font-size: 26px;
 }
 
+img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.ctr-flex {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
 header {
   width: 100%;
-  height: 80px;
+  height: 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 0px 10px 5px 0px rgba(50, 50, 50, 0.75); /* Ne fonctionne pas */
 }
 header h1 {
   font-family: "Shrikhand";
   text-align: center;
+}
+header i {
+  position: absolute;
+  align-self: center;
+  left: 20px;
+  font-size: 26px;
 }
 
 button {
@@ -125,17 +142,17 @@ button {
   margin: 15px;
 }
 
-main {
+.home {
   height: 1500px;
   width: 100%;
   display: flex;
   flex-direction: column;
   background-color: rgb(245, 245, 245);
 }
-main h2 {
+.home h2 {
   margin: 40px 0 20px 20px;
 }
-main .restaurant {
+.home__restaurant {
   height: 300px;
   width: 90%;
   background-color: #FFFFFF;
@@ -144,19 +161,71 @@ main .restaurant {
   border-radius: 10px;
   box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);
 }
-main .restaurant img {
+.home__restaurant .new {
+  position: relative;
+  background-color: #99E2D0;
+  top: -270px;
+  left: 70%;
+  width: 25%;
+  height: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+}
+.home__restaurant .new p {
+  text-align: center;
+  font-weight: 500;
+  color: #1f8f75;
+}
+.home__restaurant img {
   width: 100%;
   height: 80%;
   border-radius: 10px 10px 0px 0px;
   max-height: 300px;
   object-fit: cover;
 }
-main .restaurant__infos {
+.home__restaurant__infos {
   height: 20%;
+}
+.home__restaurant h3 {
+  padding-left: 1.8%;
+}
+.home__restaurant .like {
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+}
+.home__restaurant .like .like-default {
+  position: relative;
+  background-color: white;
+}
+.home__restaurant .like--select::before {
+  color: rgb(147, 86, 220);
+}
+.home__restaurant .like p {
+  width: 50%;
+  padding-left: 2%;
+}
+.home__restaurant .like div {
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+}
+.home__restaurant .like .pos {
+  position: relative;
+  left: 24%;
+  z-index: 2;
+}
+.home__restaurant .like .pos:hover {
+  z-index: -1;
+}
+.home__restaurant .like .pos:focus {
+  z-index: -1;
 }
 
 footer {
-  background-color: black;
+  background-color: rgb(50, 50, 50);
   color: #FFFFFF;
 }
 footer h3 {
@@ -166,7 +235,82 @@ footer h3 {
 }
 footer div {
   margin-left: 20px;
+  display: flex;
+}
+footer div i {
+  margin-right: 10px;
 }
 footer > p {
   margin-left: 20px;
+}
+
+.restaurant-container {
+  background-color: rgb(245, 245, 245);
+  border-radius: 20px 20px 0 0;
+  position: relative;
+  top: -50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.restaurant-container h2 {
+  font-weight: 300;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.restaurant-container .title-restaurant {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+}
+.restaurant-container .title-restaurant h1 {
+  font-family: "Shrikhand";
+  font-size: 26px;
+  font-weight: 300;
+  margin-top: 20px;
+  padding-left: 7%;
+}
+.restaurant-container .title-restaurant i {
+  padding-top: 20px;
+  font-size: 26px;
+}
+.restaurant-container .title-dishes {
+  width: 95%;
+}
+.restaurant-container .dish {
+  width: 90%;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  margin: 10px;
+  box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  justify-items: space-around;
+}
+.restaurant-container .dish h3 {
+  width: 90%;
+  padding: 5px;
+  font-weight: 500;
+}
+.restaurant-container .dish p {
+  width: 85%;
+  padding: 5px;
+  font-size: 1em;
+  font-weight: 300;
+}
+.restaurant-container .dish h4 {
+  width: 10%;
+}
+.restaurant-container .dish__validation {
+  display: none;
+}
+.restaurant-container button {
+  justify-items: center;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
 }
