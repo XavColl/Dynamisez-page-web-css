@@ -32,6 +32,9 @@ img{
     width : 100%;
     object-fit: cover;
 }
+i{
+    width : 15px;
+}
 .ctr-flex{
     display : flex;
     width : 100%;
@@ -336,6 +339,7 @@ footer{
         justify-content : space-between;
         justify-items: space-around;
         h3{
+            margin : 10px;
             width : 80%;
             padding : 5px;
             font-weight: 500;
@@ -345,22 +349,21 @@ footer{
             white-space: nowrap;
         }
         p{
-            width : 85%;
+            margin : 10px;
+            width : 80%;
             height : 1em;
             padding : 5px;
             font-size : 1em;
             font-weight : 300;
             transition : 0.3s;
+            bottom : 10px;
             position : relative;
-            top : 15px;
             text-overflow : ellipsis;
             overflow : hidden;
             white-space: nowrap;
         }
         h4{
             width : 10%;
-            position : relative;
-            top : 15px;
         }
         &__validation {
             width : 0%;
@@ -368,7 +371,7 @@ footer{
             height : 100%;
             transition: all 0.3s;
             position : relative ;
-            top : -29px;
+            top : -49px;
             border-radius: 0 20px 20px 0 ;
             display : flex;
             justify-content: center;
@@ -377,6 +380,8 @@ footer{
                 display : none;
                 color: #FFFFFF;
                 font-size : 2em;
+                position : relative;
+                left : -8px;
             }
         }
         &:hover > .dish__validation{
