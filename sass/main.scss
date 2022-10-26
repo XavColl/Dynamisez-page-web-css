@@ -12,8 +12,7 @@ $background-green : #99E2D0;
     font-family: "Roboto";
 }
 body{
-    width : 100%;
-    overflow-x : hidden;
+    width : 100vw;
 }
 p{
     font-size : 18px;
@@ -352,7 +351,6 @@ footer{
         display : flex;
         flex-wrap : wrap;
         justify-content : space-between;
-        justify-items: space-around;
         h3{
             margin : 10px;
             width : 80%;
@@ -509,5 +507,11 @@ a{
     }
     100%{
         transform: rotate(1000deg);
+    }
+}
+
+@for $i from 1 through 10{
+    .appear-#{$i} {
+        animation-delay: ($i * 300ms);
     }
 }

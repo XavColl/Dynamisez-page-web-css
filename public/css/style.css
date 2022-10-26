@@ -6,8 +6,8 @@
 }
 
 body {
-  width: 100%;
-  overflow-x: hidden;
+  width: 100vw;
+  overflow-x :hidden;
 }
 
 p {
@@ -41,6 +41,7 @@ i {
   opacity: 100%;
   animation-name: appear;
   animation-duration: 5s;
+  overflow-x : hidden;
 }
 
 .loading {
@@ -49,6 +50,7 @@ i {
   width: 100vw;
   height: 100vh;
   background-color: #FFFFFF;
+  overflow-x : hidden;
 }
 
 .ctr-flex {
@@ -361,7 +363,6 @@ footer > p {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  justify-items: space-around;
 }
 .restaurant-container .dish h3 {
   margin: 10px;
@@ -495,7 +496,7 @@ a {
 }
 @keyframes appearsLeft {
   0% {
-    left: 1000px;
+    left: 100%;
   }
   80% {
     left: 1000px;
@@ -522,4 +523,43 @@ a {
   100% {
     transform: rotate(1000deg);
   }
+}
+.appear-1 {
+  animation-delay: 300ms;
+}
+
+.appear-2 {
+  animation-delay: 600ms;
+}
+
+.appear-3 {
+  animation-delay: 900ms;
+}
+
+.appear-4 {
+  animation-delay: 1200ms;
+}
+
+.appear-5 {
+  animation-delay: 1500ms;
+}
+
+.appear-6 {
+  animation-delay: 1800ms;
+}
+
+.appear-7 {
+  animation-delay: 2100ms;
+}
+
+.appear-8 {
+  animation-delay: 2400ms;
+}
+
+.appear-9 {
+  animation-delay: 2700ms;
+}
+
+.appear-10 {
+  animation-delay: 3000ms;
 }
