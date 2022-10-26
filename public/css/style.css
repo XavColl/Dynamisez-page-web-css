@@ -34,6 +34,24 @@ i {
   width: 15px;
 }
 
+.content {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  opacity: 100%;
+  animation-name: body;
+  animation-duration: 5s;
+}
+
+.loading {
+  position: fixed;
+  z-index: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #FFFFFF;
+}
+
 .ctr-flex {
   display: flex;
   width: 100%;
@@ -379,7 +397,7 @@ footer > p {
   height: 100%;
   transition: all 0.3s;
   position: relative;
-  top: -49px;
+  top: -48.5px;
   border-radius: 0 20px 20px 0;
   display: flex;
   justify-content: center;
@@ -414,34 +432,18 @@ a {
   color: inherit;
 }
 
-@keyframes appearsLeft {
-  0% {
-    left: 1000px;
-  }
-  100% {
-    left: 0px;
-  }
-}
-@keyframes appearsRight {
-  0% {
-    right: 100%;
-  }
-  100% {
-    right: 0%;
-  }
-}
 .appearLeft {
   position: relative;
   left: 0%;
   animation-name: appearsLeft;
-  animation-duration: 1s;
+  animation-duration: 5s;
 }
 
 .appearRight {
   position: relative;
   right: 0%;
   animation-name: appearsRight;
-  animation-duration: 1s;
+  animation-duration: 5s;
 }
 
 .hov-displayed {
@@ -454,4 +456,71 @@ a {
 }
 .displayed:hover + .hov-displayed {
   display: block !important;
+}
+
+.loader {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  top: 100px;
+  background: linear-gradient(0deg, rgb(147, 86, 220), rgb(255, 121, 218) 100%);
+  border-radius: 100%;
+  position: relative;
+  animation-name: load;
+  animation-duration: 5s;
+}
+
+.loader::before {
+  border-radius: 100%;
+  content: "";
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  top: 5px;
+  bottom: 0;
+  left: 5px;
+  right: 0;
+  background-color: #FFFFFF;
+}
+
+@keyframes body {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes appearsLeft {
+  0% {
+    left: 1000px;
+  }
+  80% {
+    left: 1000px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+@keyframes appearsRight {
+  0% {
+    right: 100%;
+  }
+  80% {
+    right: 100%;
+  }
+  100% {
+    right: 0%;
+  }
+}
+@keyframes load {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1000deg);
+  }
 }
