@@ -1,10 +1,16 @@
+// Fonts
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&family=Shrikhand&display=swap');
+
+// Vars : 
 
 $background-black: rgb(50, 50, 50);
 $background-light : rgb(245, 245, 245);
 $background-dark : rgb(225, 225, 225);
 $background-green : #99E2D0;
 
+
+// I - Base setup
 
 *{
     margin : 0;
@@ -13,6 +19,7 @@ $background-green : #99E2D0;
 }
 body{
     width : 100vw;
+    overflow-x: hidden; // To make the screen view centered on the website when it's loading
 }
 p{
     font-size : 18px;
@@ -31,29 +38,40 @@ img{
     object-fit: cover;
 }
 i{
-    width : 15px;
+    width : 30px; // To make the background take all space when hiding other icons
 }
+
+// II- loading screen 
+
 .content{
     position : absolute;
     z-index : 1;
     width : 100%;
     height : 100%;
-    opacity : 100%;
+    opacity : 100%; // To display the loading screen first and make it disappear with opacity
     animation-name : appear;
     animation-duration : 5s;
+    overflow-x: hidden;
+    background-color: $background-light;
 }
 .loading{
-    position : sticky;
+    position : sticky; // To make the loading screen take all space
     z-index : 0;
     width : 100vw;
     height : 100vh;
-    background-color : #FFFFFF;
+    background-color : #FFFFFF; // White
+    overflow-x: hidden; // Not to be bothered by divs which are outside the screen before loading
 }
+
+//helper 
+
 .ctr-flex{
     display : flex;
     width : 100%;
     justify-content: center;
 }
+
+
 header{
     width : 100%;
     height : 120px;
@@ -73,7 +91,7 @@ header{
     }
 }
 .order {
-    margin-top : 50px;
+    margin-top : 20px;
     align-self : center;
     border-radius: 120px;
     position : relative;
@@ -112,7 +130,7 @@ button{
 }
 .infos{
     width : 100%;
-    height : 450px;
+    height : 350px;
     display : flex;
     flex-direction : column;
     justify-items : center;
@@ -240,17 +258,25 @@ button{
         }
         h3{
             padding-left : 1.8%;
+            width : 50%;
         }
         .like{
             display : flex;
             width : 95%;
             justify-content : space-between ;
+            >div{
+                bottom : 10px;
+                position : relative
+            }
             .like-default{
                 position : relative;
                 background-color : white;
             }
             &--select::before{
                 color : rgb(147,86,220);
+                position : relative;
+                left : -25%;
+                margin-bottom : 10px;
             }
             p{
                 width : 50%;
@@ -262,27 +288,27 @@ button{
                 cursor: pointer;
             }
             .pos{
-                position: relative;
-                left : 24%;
-                z-index : 2;
-            }
-            .pos:hover{
-                z-index : -1;
-            }
-            .pos:focus{
-                z-index : -1;
+                width : 50px;
+                display : flex;
+                .none{
+                    opacity : 0;
+                    position : relative;
+                    left : -45%;
+                    transition : 0.2s;
+                }
+                .none:hover{ 
+                    opacity : 1
+                }
             }
         }
     }
 }
-.ftr-menu{
-    position : relative;
-    top : -50px;
-}
+
 footer{
     background-color: $background-black;
     color : #FFFFFF;
     h3{
+        margin : 10px 0;
         font-family: "Shrikhand";
         margin-left : 20px;
         font-weight: 300;
@@ -297,10 +323,14 @@ footer{
     >p{
         margin-left : 20px;
     } 
+    a {
+        margin-left : 20px;
+        font-weight : 300;
+    }
 }
 
 .restaurant-container{
-    padding-bottom : 100px;
+    padding-bottom : 40px;
     background-color :$background-light;
     border-radius : 20px 20px 0 0;
     position : relative;
@@ -333,9 +363,24 @@ footer{
             margin-top : 20px;
             padding-left : 7%;
         }
+        .pos{
+            width : 50px;
+                display : flex;
+                .none{
+                    color : rgba(147,86,220,1);
+                    opacity : 0;
+                    position : relative;
+                    left : -52%;
+                    transition : 0.2s;
+                }
+                .none:hover{ 
+                    opacity : 1
+                }
+        }
         i{
             padding-top : 20px;
             font-size : 26px;
+            transition : 0.2s;
         }
     }
     .title-dishes{
@@ -431,27 +476,19 @@ a{
     animation-name: appearsRight;
     animation-duration: 5s;
 }
-
-.hov-displayed{
-    color : rgb(147,86,220);
-    display : none !important;
-}
-.displayed:hover{
-    display : none;
-    + .hov-displayed{
-        display : block !important;
-    }
-}
 .loader{
     width : 100px;
     height : 100px;
     margin : auto;
-    top : 100px;
+    top : 0;
+    bottom : 0;
+    right : 0;
+    left : 0;
     background : linear-gradient(0deg, rgba(147,86,220,1), rgba(255,121,218,1) 100%);
     border-radius : 100%;
-    position : relative;
+    position : absolute;
     animation-name: load;
-    animation-duration: 5s;
+    animation-duration: 4s;
 }
 .loader::before{
     border-radius: 100%;
