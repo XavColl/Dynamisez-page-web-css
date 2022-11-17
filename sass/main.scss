@@ -20,7 +20,9 @@ $background-green : #99E2D0;
 body{
     width : 100vw;
     overflow-x: hidden; // To make the screen view centered on the website when it's loading
+    background: $background-light;
 }
+// Setting the sizes for the consistency of the site
 p{
     font-size : 18px;
     font-weight: 300;
@@ -42,7 +44,10 @@ i{
 }
 
 // II- loading screen 
-
+.appear{
+    opacity : 0;
+    animation : appear 3s forwards;
+}
 .content{
     position : absolute;
     z-index : 1;
@@ -50,7 +55,7 @@ i{
     height : 100%;
     opacity : 100%; // To display the loading screen first and make it disappear with opacity
     animation-name : appear;
-    animation-duration : 5s;
+    animation-duration : 3s;
     overflow-x: hidden;
     background-color: $background-light;
 }
@@ -72,15 +77,16 @@ i{
 }
 
 
+// III - Header
+
 header{
-    width : 100%;
-    height : 120px;
+    padding : 20px 0;
     display : flex;
     flex-direction : column;
     justify-content: center;
-    background-color : #FFFFFF;
+    background-color : #FFFFFF; // White
     h1{
-        font-family: "Shrikhand";
+        font-family: "Shrikhand"; // Font-family : to make the title of logos
         text-align : center;
     }
     i{
@@ -90,60 +96,43 @@ header{
         font-size : 26px;
     }
 }
-.order {
-    margin-top : 20px;
-    align-self : center;
-    border-radius: 120px;
-    position : relative;
-    overflow : hidden;
-    transition: 0.2s ease-in;
-    height : 60px;
-    width : 60%;
-    &:hover::before{
-        top : 0px;
-    }
-    &::before{
-        transform : translateZ(2px);
-        transition : 0.5s;
-        content : "";
-        display : block;
-        position : relative;
-        background: linear-gradient(0deg, rgba(147,86,220,1), rgba(255,121,218,1) 100%);
-        width : 100%;
-        height : 200%;
-        top : -60px;
-    }
-    &:active{
-        transform : scale(1.05);
-    }
-}
+// IV - content of the website : 
 button{
+    width : 60%;
+    height : 60px;
     cursor: pointer;
-    position : relative;
-    width : 100%;
-    height : 100%;
     font-size: 18px;
     color : #FFFFFF;
     border : none;
-    background: transparent;
-    top : -120px;
+    background: linear-gradient(0deg, rgba(147,86,220,1), rgba(255,121,218,1) 100%);
+    align-self : center;
+    border-radius : 50px;
+    transition : 0.4s;
+    &:hover{
+        opacity : 0.8;
+    }
 }
+
+// V - class 'infos', under the header
+
 .infos{
-    width : 100%;
-    height : 350px;
+    width : 100%; // As always to take the whole width
+    height : 350px; // Fixed height
     display : flex;
     flex-direction : column;
     justify-items : center;
-    p,h2{ 
+    p{ 
         text-align : center;
+        padding : 0 10%;
     }
     h2{
-        width : 70%;
+        text-align: center;
+        padding : 0 20%;
+        padding-top : 30px;
         align-self: center;
     }
     button{
-        align-self : center;
-        box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);
+        margin-bottom : 30px;
     }
     &__content{
         display : flex;
@@ -151,18 +140,21 @@ button{
         justify-items : center;
         justify-content: space-around;
         height : 100%;
-        background-color : $background-light;
+        background-color : $background-light; // Using the clearer background color using a var
     }
     &__title{
-        width : 100%;
-        height : 60px;
-        background-color : $background-dark;
+        padding-bottom : 15px;
+        box-shadow : inset 0px 3px 3px rgb(0 0 0 / 10%);
+        background-color : $background-dark; // Using the darker background color using a var
         p{
             margin-top : 10px;
+            font-weight: 400;
         }
     }
 }
 .help-user{
+    padding-top : 20px;
+    padding-bottom : 50px;
     background-color : #FFFFFF;
     display : flex;
     flex-direction : column;
@@ -172,7 +164,7 @@ button{
         flex-direction : column;
         justify-content: center;
         h2{
-            margin-left : 50px;
+            margin-left : 30px;
         }
     }
     &__content{
@@ -212,11 +204,10 @@ button{
 }
 
 .home{
-    height : 1500px;
-    width : 100%;
     display : flex;
     flex-direction: column;
     background-color: $background-light;
+    padding-bottom : 60px;
     h2{
         margin : 40px 0 20px 20px; 
     }
@@ -227,11 +218,11 @@ button{
         background-color: #FFFFFF;
         align-self : center;
         margin : 20px 0; 
-        border-radius: 10px;
+        border-radius: 20px;
         box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);  
         .new{
             position : relative;
-            background-color: #99E2D0;
+            background-color: $background-green;
             top : -270px;
             left : 70%;
             width : 25%;
@@ -248,15 +239,16 @@ button{
         }
         img{
             width : 100%;
-            height : 80%;
-            border-radius : 10px 10px 0px 0px;
+            height : 70%;
+            border-radius : 20px 20px 0px 0px;
             max-height : 300px;
             object-fit: cover;
         }
         &__infos{
-            height : 20%;
+            height : 30%;
         }
         h3{
+            padding-top : 20px;
             padding-left : 1.8%;
             width : 50%;
         }
@@ -307,24 +299,27 @@ button{
 footer{
     background-color: $background-black;
     color : #FFFFFF;
+    padding-bottom : 30px;
     h3{
-        margin : 10px 0;
+        padding : 20px;
         font-family: "Shrikhand";
         margin-left : 20px;
         font-weight: 300;
     }
     div{
-        margin-left : 20px;
+        margin-left : 40px;
+        margin-top : 10px;
+        margin-bottom: 10px;
         display : flex;
-        i{
-            margin-right : 10px;
-        }
+        
     }
     >p{
-        margin-left : 20px;
+        margin-left : 40px;
+        margin-top : 10px;
+        margin-bottom: 10px;
     } 
     a {
-        margin-left : 20px;
+        margin-left : 40px;
         font-weight : 300;
     }
 }
@@ -339,6 +334,7 @@ footer{
     flex-wrap: wrap;
     justify-content : center;
     h2{
+        margin : 10px;
         font-weight : 300;
         font-size : 20px;
         text-transform:uppercase;
@@ -348,20 +344,20 @@ footer{
         content : "";
         display : block;
         width : 60px;
-        height : 5px;
+        height : 3px;
         background-color : rgb(0, 199, 189);
         margin : 5px 0 15px 0;
     }
     .title-restaurant{
         display : flex;
         justify-content: space-between;
-        width : 85%;
+        width : 100%;
+        margin-left : 20px;
         h1{
             font-family: 'Shrikhand';
             font-size : 26px;
             font-weight : 300;
             margin-top : 20px;
-            padding-left : 7%;
         }
         .pos{
             width : 50px;
@@ -458,23 +454,12 @@ footer{
     }
     button{
         justify-items : center;
+        margin-top : 50px;
     }
 }
 a{
     text-decoration: inherit;
     color : inherit;
-}
-.appearLeft{
-    position : relative;
-    left : 0%;
-    animation-name: appearsLeft;
-    animation-duration: 5s;
-}
-.appearRight{
-    position : relative;
-    right : 0%;
-    animation-name: appearsRight;
-    animation-duration: 5s;
 }
 .loader{
     width : 100px;
@@ -488,7 +473,7 @@ a{
     border-radius : 100%;
     position : absolute;
     animation-name: load;
-    animation-duration: 4s;
+    animation-duration: 3s;
 }
 .loader::before{
     border-radius: 100%;
@@ -507,36 +492,13 @@ a{
     0%{
         opacity: 0;
     }
-    80%{
+    70%{
         opacity: 0;
     }
     100%{
         opacity : 1;
     }
 
-}
-
-@keyframes appearsLeft{
-    0%{
-        left : 1000px;
-    }
-    80%{
-        left : 1000px;
-    }
-    100%{
-        left : 0px;
-    }
-}
-@keyframes appearsRight{
-    0%{
-        right : 100%;
-    }
-    80%{
-        right : 100%;
-    }
-    100%{
-        right : 0%;
-    }
 }
 @keyframes load{
     0%{
@@ -547,7 +509,7 @@ a{
     }
 }
 
-@for $i from 1 through 10{
+@for $i from 1 through 11{
     .appear-#{$i} {
         animation-delay: ($i * 300ms);
     }
