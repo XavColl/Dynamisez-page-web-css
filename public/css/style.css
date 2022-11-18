@@ -39,6 +39,11 @@ i {
   animation: appear 3s forwards;
 }
 
+.appears {
+  opacity: 0;
+  animation: appear 1s forwards;
+}
+
 .content {
   position: absolute;
   z-index: 1;
@@ -168,6 +173,7 @@ button:hover {
   border-radius: 20px;
   align-self: center;
   box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
 }
 .help-user__card__number {
   align-self: center;
@@ -187,6 +193,9 @@ button:hover {
 .help-user__card i {
   align-self: center;
   margin: 15px;
+}
+.help-user__card:hover {
+  background-color: rgba(146, 86, 220, 0.2);
 }
 
 .home {
@@ -258,6 +267,9 @@ button:hover {
   position: relative;
   left: -25%;
   margin-bottom: 10px;
+  background: linear-gradient(0deg, rgb(147, 86, 220), rgb(255, 121, 218) 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 .home__restaurant .like p {
   width: 50%;
@@ -351,7 +363,9 @@ footer a {
   display: flex;
 }
 .restaurant-container .title-restaurant .pos .none {
-  color: rgb(147, 86, 220);
+  background: linear-gradient(0deg, rgb(147, 86, 220), rgb(255, 121, 218) 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
   opacity: 0;
   position: relative;
   left: -52%;

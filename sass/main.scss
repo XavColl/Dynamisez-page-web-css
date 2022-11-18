@@ -48,6 +48,10 @@ i{
     opacity : 0;
     animation : appear 3s forwards;
 }
+.appears{
+    opacity : 0;
+    animation : appear 1s forwards;
+}
 .content{
     position : absolute;
     z-index : 1;
@@ -180,7 +184,8 @@ button{
         background-color : $background-light;
         border-radius: 20px;
         align-self : center;
-        box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);  
+        box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);
+        transition : 0.2s;  
         &__number{
             align-self : center;
             background-color : rgb(147,86,220);
@@ -199,6 +204,9 @@ button{
         i{
             align-self: center;
             margin : 15px;
+        }
+        &:hover{
+            background-color: rgba(146, 86, 220, 0.2);;
         }
     }
 }
@@ -269,6 +277,9 @@ button{
                 position : relative;
                 left : -25%;
                 margin-bottom : 10px;
+                background: linear-gradient(0deg, rgba(147,86,220,1), rgba(255,121,218,1) 100%);
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
             }
             p{
                 width : 50%;
@@ -334,11 +345,11 @@ footer{
     flex-wrap: wrap;
     justify-content : center;
     h1{
-                font-family: 'Shrikhand';
-                font-size : 26px;
-                font-weight : 300;
-                margin-top : 20px;
-            }
+        font-family: 'Shrikhand';
+        font-size : 26px;
+        font-weight : 300;
+        margin-top : 20px;
+    }
     .restaurant-section{
         h2{
             margin : 10px;
@@ -366,7 +377,9 @@ footer{
             width : 50px;
                 display : flex;
                 .none{
-                    color : rgba(147,86,220,1);
+                    background: linear-gradient(0deg, rgba(147,86,220,1), rgba(255,121,218,1) 100%);
+                    -webkit-text-fill-color: transparent;
+                    -webkit-background-clip: text;
                     opacity : 0;
                     position : relative;
                     left : -52%;
